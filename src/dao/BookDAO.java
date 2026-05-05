@@ -55,6 +55,7 @@ public class BookDAO {
     public List<Book> getBooksByGenre(String genre) {
         EntityManager em = emf.createEntityManager();
         TypedQuery<Book> query = em.createQuery("SELECT b FROM Book b WHERE b.genre = :genreParam", Book.class);
+        query.setParameter("genreParam", genre);
         List<Book> books = query.getResultList();
         em.close();
         return books;
@@ -130,6 +131,7 @@ public class BookDAO {
             Long count = (Long) row[1];
             map.put(genre, count);
         }
+        em.close();
         return map;
     }
 
@@ -144,6 +146,7 @@ public class BookDAO {
             Double avgPrice = (Double) row[1];
             map.put(genre, avgPrice);
         }
+        em.close();
         return map;
     }
 

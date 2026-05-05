@@ -120,15 +120,19 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", ISBN='" + ISBN + '\'' +
-                ", publicationYear=" + publicationYear +
-                ", genre='" + genre + '\'' +
-                ", price=" + price +
-                ", availableCopies=" + availableCopies +
-                ", isBestSeller=" + isBestSeller +
-                '}';
+        return String.format(
+                "\n  (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧  【 BOOK INFO 】  ✧ﾟ･: * \n" +
+                        "  ID:               %d\n" +
+                        "  Título:           %s\n" +
+                        "  Autor:            %s\n" +
+                        "  ISBN:             %s\n" +
+                        "  Año:              %d\n" +
+                        "  Género:           %s\n" +
+                        "  Precio:           %.2f €\n" +
+                        "  Stock:            %d unidades\n" +
+                        "  Best Seller:      %s\n" +
+                        "  ───────────────────────────────────",
+                id, title, author, ISBN, publicationYear, genre, price, availableCopies, (isBestSeller ? "Sí ★" : "No")
+        );
     }
 }
