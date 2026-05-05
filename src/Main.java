@@ -16,6 +16,22 @@ public class Main {
 
         System.out.println(dao.getAllBooks());
 
+        System.out.println(dao.getBooksByGenre("Novel"));
+
+        System.out.println(dao.getBooksLowStock());
+
+        System.out.println(dao.getBooksPublishedAfter2000());
+
+        System.out.println(dao.getBooksByAuthorContent("ing"));
+
+        System.out.println(dao.getExpensiveBooks());
+
+        System.out.println(dao.getDistinctBooks());
+
+        System.out.println(dao.getAvgPrice());
+
+
+
 
         emf.close();
 
